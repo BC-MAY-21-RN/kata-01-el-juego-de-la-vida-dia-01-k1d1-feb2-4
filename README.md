@@ -18,7 +18,7 @@ The Game of Life is not your typical computer game. It is a 'cellular automaton'
 
 This game became widely known when it was mentioned in an article published by Scientific American in 1970. It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the game.
 
-This Kata is about calculating the next generation of Conway’s game of life, given any starting position. 
+This Kata is about calculating the next generation of Conway’s game of life, given any starting position.
 
 You start with a two dimensional grid of cells, where each cell is either alive or dead. In this version of the problem, the grid is finite, and no life can exist off the edges. When calcuating the next generation of the grid, follow these rules:
 
