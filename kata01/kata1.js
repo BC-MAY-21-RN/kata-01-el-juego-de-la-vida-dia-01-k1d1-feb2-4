@@ -1,15 +1,7 @@
 var filas = 4;
 var columnas = 8;
 
-function Celula(id, fila, columna){
-    return {
-        id : id,
-        fila : fila,
-        columna : columna
-    }
-}
-
-function matrizPrincipal(filas, columnas){
+function matrizPrincipal(filas, columnas){ //Matriz madre/
     var filas = filas;
     var columnas = columnas;
 
@@ -52,7 +44,7 @@ function matrizPrincipal(filas, columnas){
     for(let y=0;y<filas;y++){
         console.log(matrizVecinos[y].join(""));
     }
-    
+
     recorrerMatriz(matriz,matrizVecinos);
     
     matrizRules(matriz,matrizVecinos);
@@ -66,14 +58,14 @@ function recorrerMatriz(matriz, matrizVecinos)
     {
         for(let x=1;x<=columnas;x++)
         {
-            
+
             if(matriz[y][x] == ' * ')
             {
                 //contarVecinos = contarVecinos + 1;
                 console.log(matrizVecinos[0][0])
                 console.log(matrizVecinos[0][0+1])
                 console.log(matrizVecinos[0][1]);
-                
+
                 contarVecinos = matrizVecinos[y][x+1]; 
                 matrizVecinos[y][x-1] = contarVecinos;
             } // Nos faltó agregar otro ciclo para recorrer en otras direcciones, .map + function()
@@ -84,13 +76,12 @@ function recorrerMatriz(matriz, matrizVecinos)
     }
 }
 
-function matrizRules(matriz, matrizVecinos)
+function matrizRules(matriz, matrizVecinos) //Reglas
 {
-    
     var cell;
     var matrizInternaFinal = [];
     var matrizFinal = [];
-    
+
     for(let y=0;y<columnas;y++)
     {
         for(let x=0;x<filas;x++)
@@ -133,15 +124,3 @@ function matrizRules(matriz, matrizVecinos)
     }
     return matrizFinal;
 }
-
-
-/*Cualquier célula viva con menos de 2 vecinos vivos muere
-  Cualquier célula viva con más de 3 vecinos muere  ()
-  Cualquier célula viva con 2 o 3 vecinos vivos vive
-  Cualquier célula con 3 vecinos vivos vive
-
-1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
-2. Any live cell with more than three live neighbours dies, as if by overcrowding.
-3. Any live cell with two or three live neighbours lives on to the next generation.
-4. Any dead cell with exactly three live neighbours becomes a live cell.
-*/
