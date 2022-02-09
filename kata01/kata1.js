@@ -18,7 +18,7 @@ function matrizPrincipal(filas, columnas){
 
     for(let y=0;y<filas;y++)
     {
-        
+
         var matrizInterna = [];
         var matrizInternaVecinos = [];
         for(let x=0;x<columnas;x++)
@@ -28,13 +28,13 @@ function matrizPrincipal(filas, columnas){
             if(num%2==0){
                 cell = " . ";
                 matrizInterna.push(cell);
-                
+
             }
             else{
                 cell = " * ";
                 matrizInterna.push(cell);
             }
-            
+
             cell = 0;
             matrizInternaVecinos.push(cell);
         }
@@ -121,7 +121,7 @@ function matrizRules(matriz, matrizVecinos)
                     matrizInternaFinal.push(cell);
                     // Regla 4
                 }
-            }   
+            }
             else{
                 console.log("entrando al else")
             }
@@ -143,4 +143,5 @@ function matrizRules(matriz, matrizVecinos)
 1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
 2. Any live cell with more than three live neighbours dies, as if by overcrowding.
 3. Any live cell with two or three live neighbours lives on to the next generation.
-4. Any dead cell with exactly three live neighbours becomes a live cell.*/
+4. Any dead cell with exactly three live neighbours becomes a live cell.
+*/
